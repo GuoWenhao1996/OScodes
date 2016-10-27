@@ -23,10 +23,10 @@ public class Producer extends Thread {
                 P_V.getInstance().Pwait(P_V.getMutex());
                 StoreFrame.count_store++;
                 StoreFrame.goods = StoreFrame.goods + "☆";
-                StoreFrame.store.setText(StoreFrame.goods);
-                StoreFrame.count_store_Label.setText(StoreFrame.count_store + "");
                 P_V.getInstance().Vsignal(P_V.getMutex());
                 P_V.getInstance().Vsignal(P_V.getFull());
+                StoreFrame.store.setText(StoreFrame.goods);
+                StoreFrame.count_store_Label.setText(StoreFrame.count_store + "");
             } catch (InterruptedException ex) {
                 Logger.getLogger(Producer.class.getName()).log(Level.SEVERE, null, ex);
             }

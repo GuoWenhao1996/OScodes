@@ -19,7 +19,6 @@ public class Consumer extends Thread {
     public void run() {
         while (true) {
             try {
-                sleep(500);
                 P_V.getInstance().Pwait(P_V.getFull());
                 P_V.getInstance().Pwait(P_V.getMutex());
                 StoreFrame.count_store--;
@@ -28,10 +27,11 @@ public class Consumer extends Thread {
                 } else {
                     StoreFrame.goods = StoreFrame.goods.substring(1);
                 }
-                StoreFrame.store.setText(StoreFrame.goods);
-                StoreFrame.count_store_Label.setText(StoreFrame.count_store + "");
                 P_V.getInstance().Vsignal(P_V.getMutex());
                 P_V.getInstance().Vsignal(P_V.getEmpty());
+                StoreFrame.store.setText(StoreFrame.goods);
+                StoreFrame.count_store_Label.setText(StoreFrame.count_store + "");
+                sleep(500);
             } catch (InterruptedException ex) {
                 Logger.getLogger(Producer.class.getName()).log(Level.SEVERE, null, ex);
             }

@@ -34,7 +34,7 @@ public class StoreFrame extends JFrame {
 
     private JLabel name = new JLabel("           仓库=>");
     private JLabel count_Label1 = new JLabel("                当前仓库中☆的库存为：");
-    private JLabel state_Label1 = new JLabel("个          当前状态为为：");
+    private JLabel state_Label1 = new JLabel("个          当前状态为：");
     private JLabel state_Label2 = new JLabel("个生产者  ");
     private JLabel state_Label3 = new JLabel("个消费者");
     private JLabel item1 = new JLabel("<1> ");
@@ -56,7 +56,7 @@ public class StoreFrame extends JFrame {
 
     public StoreFrame() {
         super("生产者与消费者");
-        setSize(1200, 300);
+        setSize(1200, 320);
         setLocation(100, 240);
         myLayout();
         myEventListener();

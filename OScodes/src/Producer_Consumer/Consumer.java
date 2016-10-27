@@ -29,6 +29,7 @@ public class Consumer extends Thread {
                 }
                 P_V.getInstance().Vsignal(P_V.getMutex());
                 P_V.getInstance().Vsignal(P_V.getEmpty());
+                
                 StoreFrame.store.setText(StoreFrame.goods);
                 StoreFrame.count_store_Label.setText(StoreFrame.count_store + "");
                 sleep(500);

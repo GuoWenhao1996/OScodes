@@ -25,6 +25,7 @@ public class Producer extends Thread {
                 StoreFrame.goods = StoreFrame.goods + "☆";
                 P_V.getInstance().Vsignal(P_V.getMutex());
                 P_V.getInstance().Vsignal(P_V.getFull());
+                
                 StoreFrame.store.setText(StoreFrame.goods);
                 StoreFrame.count_store_Label.setText(StoreFrame.count_store + "");
             } catch (InterruptedException ex) {

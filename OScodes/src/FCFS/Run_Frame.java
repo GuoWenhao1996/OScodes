@@ -5,11 +5,13 @@
  */
 package FCFS;
 
+import Concurrency.Count;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -124,7 +126,22 @@ public class Run_Frame extends JFrame {
     }
 
     private void myEventListener() {
-
+        //全部开始事件监听
+        start_all.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                start_all.setVisible(false);
+                
+            }
+        });
+        //重置事件监听
+        restart.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                setVisible(false);
+                Run_Frame m = new Run_Frame();
+            }
+        });
     }
 
     private static void setLookAndFeel() {
